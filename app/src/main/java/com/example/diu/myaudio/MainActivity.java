@@ -5,6 +5,8 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,12 +20,27 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private ViewPageAdapter adapter;
+
     View v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        tabLayout = (TabLayout) findViewById(R.id.tablayout_id);
+        viewPager = (ViewPager) findViewById(R.id.viewpager_id);
+        adapter = new ViewPageAdapter(getSupportFragmentManager());
+
+        // Add Fragment Here
+        adapter.AddFragment(new FragmentBangla(),"Bangla ");
+        adapter.AddFragment(new FragmentEnglish(),"English ");
+
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
 
         //snackbar
         v = findViewById(android.R.id.content);

@@ -43,7 +43,7 @@ public class FragmentBangla extends Fragment {
         v = inflater.inflate(R.layout.bangla_fragment,container,false);
 
 
-        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerViewBangla);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setHasFixedSize(true);
 

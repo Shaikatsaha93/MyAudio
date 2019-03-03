@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity
         // Add Fragment Here
         adapter.AddFragment(new FragmentBangla(),"Bangla ");
         adapter.AddFragment(new FragmentEnglish(),"English ");
+        adapter.AddFragment(new FragmentEnglish(),"Bangla New ");
+        adapter.AddFragment(new FragmentEnglish(),"English New ");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

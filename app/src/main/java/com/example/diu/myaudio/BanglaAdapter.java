@@ -1,12 +1,14 @@
 package com.example.diu.myaudio;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -33,12 +35,24 @@ public class BanglaAdapter extends RecyclerView.Adapter<BanglaAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        BanglaItem banglaItem = banglaItems.get(i);
+        final BanglaItem banglaItem = banglaItems.get(i);
 
         viewHolder.textViewStory.setText(banglaItem.getStoryName());
         viewHolder.textViewWritter.setText(banglaItem.getWritterName());
 
         Picasso.get().load(banglaItem.getStoryImage()).fit().into(viewHolder.imageView);
+
+        viewHolder.linear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,AudioActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("storyName",banglaItem.getStoryName());
+                intent.putExtra("storyImage",banglaItem.getStoryImage());
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -51,6 +65,7 @@ public class BanglaAdapter extends RecyclerView.Adapter<BanglaAdapter.ViewHolder
         public TextView textViewStory;
         public TextView textViewWritter;
         public ImageView  imageView;
+        public LinearLayout linear;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -58,6 +73,7 @@ public class BanglaAdapter extends RecyclerView.Adapter<BanglaAdapter.ViewHolder
             textViewStory = (TextView) itemView.findViewById(R.id.story);
             textViewWritter = (TextView) itemView.findViewById(R.id.writter);
             imageView = (ImageView) itemView.findViewById(R.id.image);
+            linear = (LinearLayout) itemView.findViewById(R.id.linear);
         }
     }
 }

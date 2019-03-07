@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class AudioActivity extends AppCompatActivity {
 
-    TextView name;
+    TextView storyname, writername;
     ImageView image;
-    String nameStory;
+    String nameStory, writerStory;
     String imageStory;
 
     @Override
@@ -17,14 +19,16 @@ public class AudioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio);
 
-        name = findViewById(R.id.audioName);
+        storyname = findViewById(R.id.audioStoryName);
+        writername = findViewById(R.id.audioWriterName);
         image = findViewById(R.id.audioImage);
 
         nameStory = getIntent().getStringExtra("storyName");
+        writerStory = getIntent().getStringExtra("writterName");
         imageStory = getIntent().getStringExtra("storyImage");
 
-        name.setText(nameStory);
-        int resourceId = getResources().getIdentifier(imageStory,"drawable", getPackageName());
-        image.setImageResource(resourceId);
+        storyname.setText(nameStory);
+        writername.setText(writerStory);
+        Picasso.get().load(imageStory).fit().into(image);
     }
 }

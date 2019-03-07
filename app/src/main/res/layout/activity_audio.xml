@@ -13,11 +13,24 @@
         android:id="@+id/audioImage"
         android:src="@mipmap/ic_launcher_round"
         android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
         android:layout_height="0dp"
-        android:layout_weight="70"/>
+        android:layout_weight="60"/>
 
     <TextView
-        android:id="@+id/audioName"
+        android:id="@+id/audioStoryName"
+        android:layout_weight="7"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="name"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/audioWriterName"
         android:layout_weight="7"
         android:layout_width="match_parent"
         android:layout_height="0dp"

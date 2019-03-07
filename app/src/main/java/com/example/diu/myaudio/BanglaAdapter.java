@@ -48,6 +48,7 @@ public class BanglaAdapter extends RecyclerView.Adapter<BanglaAdapter.ViewHolder
                 Intent intent = new Intent(context,AudioActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("storyName",banglaItem.getStoryName());
+                intent.putExtra("writterName",banglaItem.getWritterName());
                 intent.putExtra("storyImage",banglaItem.getStoryImage());
 
                 context.startActivity(intent);

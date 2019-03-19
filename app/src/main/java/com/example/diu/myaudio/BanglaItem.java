@@ -5,12 +5,14 @@ public class BanglaItem {
     private String storyName;
     private String writterName;
     private String storyImage;
+    private String storyLink;
 
 
-    public BanglaItem(String storyName, String writterName, String storyImage) {
+    public BanglaItem(String storyName, String writterName, String storyImage, String storyLink) {
         this.storyName = storyName;
         this.writterName = writterName;
         this.storyImage = storyImage;
+        this.storyLink = storyLink;
 
     }
 
@@ -31,7 +33,9 @@ public class BanglaItem {
         return storyImage;
     }
 
-
+    public String getStoryLink() {
+        return storyLink;
+    }
     //setter
 
 

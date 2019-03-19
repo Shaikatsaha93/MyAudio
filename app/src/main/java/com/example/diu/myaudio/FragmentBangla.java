@@ -71,7 +71,8 @@ public class FragmentBangla extends Fragment {
                                 BanglaItem bangla = new BanglaItem(
                                         o.getString("story_name"),
                                         o.getString("writter_name"),
-                                        o.getString("story_image")
+                                        o.getString("story_image"),
+                                        o.getString("story_link")
                                 );
                                 banglaItems.add(bangla);
                             }

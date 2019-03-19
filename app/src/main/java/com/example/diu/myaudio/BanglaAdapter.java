@@ -50,6 +50,7 @@ public class BanglaAdapter extends RecyclerView.Adapter<BanglaAdapter.ViewHolder
                 intent.putExtra("storyName",banglaItem.getStoryName());
                 intent.putExtra("writterName",banglaItem.getWritterName());
                 intent.putExtra("storyImage",banglaItem.getStoryImage());
+                intent.putExtra("storyLink",banglaItem.getStoryLink());
 
                 context.startActivity(intent);
             }

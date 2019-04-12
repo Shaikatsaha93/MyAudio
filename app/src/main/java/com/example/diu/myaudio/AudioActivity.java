@@ -76,6 +76,18 @@ public class AudioActivity extends AppCompatActivity {
                     }
                 }
             });
+            forBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    player.seekTo(player.getCurrentPosition()+50000);
+                }
+            });
+            backBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    player.seekTo(player.getCurrentPosition()-50000);
+                }
+            });
             totaltime = player.getDuration();
         }catch(Exception e){
 

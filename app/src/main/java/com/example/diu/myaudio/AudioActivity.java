@@ -17,7 +17,7 @@ import com.squareup.picasso.Picasso;
 public class AudioActivity extends AppCompatActivity {
 
     private Button backBtn, forBtn;
-    private ImageButton playBtn;
+    private Button playBtn;
     private SeekBar seekbar;
     private Runnable runnable;
     private Handler handler;
@@ -62,6 +62,8 @@ public class AudioActivity extends AppCompatActivity {
             player.prepare();
             player.start();
             playBtn.setBackgroundResource(R.drawable.ic_pause_black_24dp);
+            backBtn.setBackgroundResource(R.drawable.ic_back_black_24dp);
+            forBtn.setBackgroundResource(R.drawable.ic_fast_black_24dp);
             playBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
